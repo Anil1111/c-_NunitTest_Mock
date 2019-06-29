@@ -1,22 +1,16 @@
 ﻿using NUnit.Framework;
-using TestNinja.Fundamentals;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TestNinja.Fundamentals.Tests
+namespace TestNinja.UnitTests.Fundamentals
 {
     [TestFixture()]
     public class StackTests
     {
-        private Stack<string> _stack;
+        private TestNinja.Fundamentals.Stack<string> _stack;
 
         [SetUp]
         public void Setup()
         {
-            _stack = new Stack<string>();
+            _stack = new TestNinja.Fundamentals.Stack<string>();
         }
 
         [TestCase]

@@ -43,8 +43,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.3.0-preview6-19304-03\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Moq, Version=4.7.145.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
-      <HintPath>..\packages\Moq.4.7.145\lib\net45\Moq.dll</HintPath>
+    <Reference Include="Moq, Version=4.12.0.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.12.0\lib\net45\Moq.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -63,9 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DemeritPointsCalculatorTests.cs" />
-    <Compile Include="FizzBuzzTests.cs" />
+    <Compile Include="Fundamentals\DemeritPointsCalculatorTests.cs" />
+    <Compile Include="Fundamentals\FizzBuzzTests.cs" />
+    <Compile Include="Fundamentals\CustomerControllerTests.cs" />
+    <Compile Include="Fundamentals\DateHelperTests.cs" />
+    <Compile Include="Fundamentals\ErrorLoggerTests.cs" />
     <Compile Include="Fundamentals\HtmlFormatterTests.cs" />
+    <Compile Include="Fundamentals\MathTests.cs" />
+    <Compile Include="Fundamentals\PhoneNumberTests.cs" />
+    <Compile Include="Fundamentals\ReservationTests.cs" />
     <Compile Include="Fundamentals\StackTests.cs" />
     <Compile Include="Mocking\BookingHelperTests.cs" />
     <Compile Include="Mocking\DbEmployeeStorageTests.cs" />
@@ -74,6 +80,7 @@
     <Compile Include="Mocking\HousekeeperServiceTests.cs" />
     <Compile Include="Mocking\InstallerHelperTests.cs" />
     <Compile Include="Mocking\VideoServiceTests.cs" />
+    <Compile Include="Mocking\XtraMessageBoxTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

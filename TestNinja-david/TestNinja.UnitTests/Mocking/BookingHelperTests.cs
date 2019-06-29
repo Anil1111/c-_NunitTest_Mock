@@ -3,8 +3,9 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using TestNinja.Mocking;
 
-namespace TestNinja.Mocking.Tests
+namespace TestNinja.UnitTests.Mocking
 {
     [TestFixture()]
     public class BookingHelperTests

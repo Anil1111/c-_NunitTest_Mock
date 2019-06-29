@@ -22,6 +22,7 @@ namespace TestNinja.Mocking
         }
         public string FileRead(string path)
         {
+            if (string.IsNullOrWhiteSpace(path)) throw new ArgumentException();
             var str = _file.ReadAllText(path);
             return str;
         }

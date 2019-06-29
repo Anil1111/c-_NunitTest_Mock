@@ -1,9 +1,10 @@
-﻿using Moq;
+﻿using System.Collections.Generic;
+using Moq;
 using Newtonsoft.Json;
 using NUnit.Framework;
-using System.Collections.Generic;
+using TestNinja.Mocking;
 
-namespace TestNinja.Mocking.Tests
+namespace TestNinja.UnitTests.Mocking
 {
     [TestFixture()]
     public class VideoServiceTests

@@ -1,8 +1,9 @@
-﻿using Moq;
+﻿using System.Net;
+using Moq;
 using NUnit.Framework;
-using System.Net;
+using TestNinja.Mocking;
 
-namespace TestNinja.Mocking.Tests
+namespace TestNinja.UnitTests.Mocking
 {
     [TestFixture()]
     public class InstallerHelperTests

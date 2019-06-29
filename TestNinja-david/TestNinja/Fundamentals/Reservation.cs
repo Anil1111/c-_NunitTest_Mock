@@ -2,11 +2,16 @@
 {
     public class Reservation
     {
-        public User MadeBy { get; set; }
+        private readonly User _madeby;
+
+        public Reservation(User madeby)
+        {
+            _madeby = madeby;
+        }
 
         public bool CanBeCancelledBy(User user)
         {
-            return (user.IsAdmin || MadeBy == user);
+            return (user.IsAdmin || _madeby == user);
         }
         
     }

@@ -1,12 +1,7 @@
 ﻿using NUnit.Framework;
 using TestNinja.Fundamentals;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TestNinja.Fundamentals.Tests
+namespace TestNinja.UnitTests.Fundamentals
 {
     [TestFixture]
     public class HtmlFormatterTests

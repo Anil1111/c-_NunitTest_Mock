@@ -1,13 +1,8 @@
-﻿using NUnit.Framework;
+﻿using Moq;
+using NUnit.Framework;
 using TestNinja.Mocking;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Moq;
 
-namespace TestNinja.Mocking.Tests
+namespace TestNinja.UnitTests.Mocking
 {
     [TestFixture()]
     public class DbEmployeeStorageTests
@@ -17,16 +12,16 @@ namespace TestNinja.Mocking.Tests
         public void DeleteEmployee_WhenCalled_ReturnExpectedResult()
         {
             // Arrange
-            var mock = new Mock<IEmployeeRepository>();
-            var storage = new DbEmployeeStorage(mock.Object);
+            var employeeRep = new Mock<IEmployeeRepository>();
+            var storage = new DbEmployeeStorage(employeeRep.Object);
             var employee = new Employee();
-            mock.Setup(m => m.Find(123)).Returns(employee);
+            employeeRep.Setup(m => m.Find(123)).Returns(employee);
             // Act
             storage.DeleteEmployee(123);
             // Assert
-            mock.Verify( m => m.Find(123));
-            mock.Verify(m => m.Remove(employee));
-            mock.Verify(m => m.SaveChanges());
+            employeeRep.Verify(m => m.Find(123));
+            employeeRep.Verify(m => m.Remove(employee));
+            employeeRep.Verify(m => m.SaveChanges());
         }
 
         [TestCase]
@@ -34,15 +29,15 @@ namespace TestNinja.Mocking.Tests
         public void DeleteEmployee_WhenEmployeesIsEmpty_ReturnExpectedResult()
         {
             // Arrange
-            var mock = new Mock<IEmployeeRepository>();
-            var storage = new DbEmployeeStorage(mock.Object);
-            mock.Setup(m => m.Find(It.IsAny<int>())).Returns((Employee) null);
+            var employeeRep = new Mock<IEmployeeRepository>();
+            var storage = new DbEmployeeStorage(employeeRep.Object);
+            employeeRep.Setup(m => m.Find(It.IsAny<int>())).Returns((Employee) null);
             // Act
             storage.DeleteEmployee(123);
             // Assert
-            mock.Verify(m => m.Find(123), Times.Once);
-            mock.Verify(m => m.Remove(null), Times.Never);
-            mock.Verify(m => m.SaveChanges(), Times.Never);
+            employeeRep.Verify(m => m.Find(123), Times.Once);
+            employeeRep.Verify(m => m.Remove(null), Times.Never);
+            employeeRep.Verify(m => m.SaveChanges(), Times.Never);
         }
     }
 }
